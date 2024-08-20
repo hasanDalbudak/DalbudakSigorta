@@ -1,0 +1,35 @@
+@model IEnumerable<Musteri>
+
+    <h2>Musteri Listesi</h2>
+    <a href="/Musteri/Create" class="btn btn-primary">Musteri Ekle</a>
+    <form class="d-flex my-3" asp-action="Index" method="get">
+        <input type="search" class="form-control me-2" name="searchString" value="@ViewBag.searchString" placeholder="Anahtar Kelime">
+        <button type="submit" class="btn btn-primary">Ara</button>
+    </form>
+    <hr>
+    <table class="table table-bordered">
+        <thead>
+            <tr> <!--satır-->
+                <th style="width: 150px;">@Html.DisplayNameFor(m => m.TCKimlik)</th> <!--kolon-->
+                <th>@Html.DisplayNameFor(m => m.MusteriAd)</th>
+                <th>@Html.DisplayNameFor(m => m.MusteriSoyad)</th>
+                <th style="width: 150px;">Seçenekler</th>
+            </tr>
+        </thead>
+        <tbody>
+    
+            @foreach(var item in Model)
+            {
+                <tr>
+                    <td> @Html.DisplayFor(modelItem =>item.TCKimlik)</td>
+                    <td> @Html.DisplayFor(modelItem =>item.MusteriAd)</td>
+                    <td>@Html.DisplayFor(modelItem =>item.MusteriSoyad)</td>
+                    <td>
+                        <a asp-controller="Musteri" asp-action="Edit" asp-route-id="@item.MusteriId" class="btn btn-sm btn-primary">Edit</a>
+                        <a asp-controller="Musteri" asp-action="Delete" asp-route-id="@item.MusteriId" class="btn btn-sm btn-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+    
+        </tbody>
+    </table>

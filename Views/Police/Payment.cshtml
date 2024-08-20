@@ -1,0 +1,48 @@
+@model DalbudakSigorta.Models.PaymentViewModel
+
+<h2>Ödeme Bilgileri</h2>
+<hr>
+
+<form asp-action="Payment" method="post">
+    <input type="hidden" asp-for="PoliceNo" />
+    
+    <div class="mb-3">
+        <label asp-for="OdemeTutari" class="form-label">Ödeme Tutarı</label>
+        <input asp-for="OdemeTutari" class="form-control" readonly />
+        <span asp-validation-for="OdemeTutari" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="KrediKartiNo" class="form-label">Kredi Kartı Numarası</label>
+        <input asp-for="KrediKartiNo" class="form-control" />
+        <span asp-validation-for="KrediKartiNo" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="KartIsimSoyisim" class="form-label">Kart Üzerindeki İsim</label>
+        <input asp-for="KartIsimSoyisim" class="form-control" />
+        <span asp-validation-for="KartIsimSoyisim" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="SonKullanmaAy" class="form-label">Son Kullanma Ayı</label>
+        <input asp-for="SonKullanmaAy" class="form-control" />
+        <span asp-validation-for="SonKullanmaAy" class="text-danger"></span>
+    </div>
+    
+    <div class="mb-3">
+        <label asp-for="SonKullanmaYil" class="form-label">Son Kullanma Yılı</label>
+        <input asp-for="SonKullanmaYil" class="form-control" />
+        <span asp-validation-for="SonKullanmaYil" class="text-danger"></span>
+    </div>
+    
+    <div class="mb-3">
+        <label asp-for="CVV" class="form-label">CVV</label>
+        <input asp-for="CVV" class="form-control" />
+        <span asp-validation-for="CVV" class="text-danger"></span>
+    </div>
+    
+
+    <button type="submit" class="btn btn-primary">Ödeme Yap</button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

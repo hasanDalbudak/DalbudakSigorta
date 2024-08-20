@@ -1,0 +1,11 @@
+@model Kullanici
+
+<p>
+    <b>@Model.KullaniciAd @Model.KullaniciSoyad</b> isimli Kullanıcıyı silmek istiyor musunuz?
+
+    <form asp-action="Delete" method="post">
+        <input type="hidden" name="id" value="@Model.KullaniciId">
+        <button type="submit" class="btn btn-danger">Evet</button>
+        <a asp-action="Index" class="btn btn-primary">Hayır</a>
+    </form>
+</p>

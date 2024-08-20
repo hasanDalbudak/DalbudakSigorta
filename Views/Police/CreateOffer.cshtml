@@ -1,0 +1,124 @@
+@model DalbudakSigorta.Models.CreateOfferViewModel
+
+<h2>Sigorta Teklifi Oluştur</h2>
+<hr>
+
+<form method="post" asp-action="CreateOffer">
+    <input type="hidden" asp-for="PoliceNo" />
+    <input type="hidden" asp-for="BransKodu" />
+    <input type="hidden" asp-for="MusteriId" />
+    <input type="hidden" asp-for="IsOfferGenerated" value="@Model.IsOfferGenerated" />
+    <input type="hidden" asp-for="TeklifTutari" value="@Model.TeklifTutari" />
+
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="mb-3">
+        <label asp-for="PlakaIlKodu" class="form-label">Plaka İl Kodu</label>
+        <input asp-for="PlakaIlKodu" class="form-control" />
+        <span asp-validation-for="PlakaIlKodu" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="PlakaKodu" class="form-label">Plaka Kodu</label>
+        <input asp-for="PlakaKodu" class="form-control" />
+        <span asp-validation-for="PlakaKodu" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="AracMarka" class="form-label">Marka</label>
+        <select asp-for="AracMarka" asp-items="ViewBag.MarkaList" class="form-select">
+            <option value="">Seçiniz</option>
+        </select>
+        <span asp-validation-for="AracMarka" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="AracModel" class="form-label">Model</label>
+        <select asp-for="AracModel" class="form-select">
+            <option value="">Seçiniz</option>
+        </select>
+        <span asp-validation-for="AracModel" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="AracModelYili" class="form-label">Model Yılı</label>
+        <select asp-for="AracModelYili" class="form-select">
+            <option value="">Seçiniz</option>
+        </select>
+        <span asp-validation-for="AracModelYili" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <button type="submit" name="action" value="TeklifAl" class="btn btn-primary">Teklif Al</button>
+        @if (Model != null && Model.IsOfferGenerated)
+        {
+            <button type="submit" name="action" value="Teklifleştir" class="btn btn-secondary">Teklifleştir</button>
+            <button type="submit" name="action" value="Policelestir" class="btn btn-secondary">Poliçeleştir</button>
+        }
+    </div>
+</form>
+
+@if (Model != null && Model.KaskoDegeri > 0 && Model.TeklifTutari > 0)
+{
+    <div class="mt-3">
+        <p><strong>Kasko Değeri:</strong> @Model.KaskoDegeri.ToString("N2") ₺</p>
+        <p><strong>Teklif Tutarı:</strong> @Model.TeklifTutari.ToString("N2") ₺</p>
+    </div>
+}
+
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            var markaDropdown = $('#AracMarka');
+            var modelDropdown = $('#AracModel');
+            var yearDropdown = $('#AracModelYili');
+
+            function populateModels(marka, selectedModel) {
+                modelDropdown.empty();
+                modelDropdown.append('<option value="">Seçiniz</option>');
+                if (marka) {
+                    $.getJSON('@Url.Action("GetModelsByMarka", "Police")', { marka: marka }, function(models) {
+                        $.each(models, function(index, model) {
+                            var selected = model === selectedModel ? 'selected' : '';
+                            modelDropdown.append('<option value="' + model + '" ' + selected + '>' + model + '</option>');
+                        });
+                    });
+                }
+            }
+
+            function populateYears(marka, model, selectedYear) {
+                yearDropdown.empty();
+                yearDropdown.append('<option value="">Seçiniz</option>');
+                if (marka && model) {
+                    $.getJSON('@Url.Action("GetModelYearsByMarkaAndModel", "Police")', { marka: marka, model: model }, function(years) {
+                        $.each(years, function(index, year) {
+                            var selected = year == selectedYear ? 'selected' : '';
+                            yearDropdown.append('<option value="' + year + '" ' + selected + '>' + year + '</option>');
+                        });
+                    });
+                }
+            }
+
+            markaDropdown.change(function() {
+                var selectedMarka = $(this).val();
+                populateModels(selectedMarka, '');
+                yearDropdown.empty();
+                yearDropdown.append('<option value="">Seçiniz</option>');
+            });
+
+            modelDropdown.change(function() {
+                var selectedMarka = markaDropdown.val();
+                var selectedModel = $(this).val();
+                populateYears(selectedMarka, selectedModel, '');
+            });
+
+            // Trigger change events to repopulate models and years on page load
+            var initialMarka = markaDropdown.val();
+            var initialModel = '@Model.AracModel';
+            var initialYear = '@Model.AracModelYili';
+
+            if (initialMarka) {
+                populateModels(initialMarka, initialModel);
+                if (initialModel) {
+                    populateYears(initialMarka, initialModel, initialYear);
+                }
+            }
+        });
+    </script>
+}

@@ -1,0 +1,107 @@
+@model DalbudakSigorta.Models.PoliceEditViewModel
+
+<h2>Poliçe Düzenle</h2>
+<hr>
+
+<div class="row">
+    <div class="col-md-6">
+        <h3>Poliçe Bilgileri</h3>
+        <form asp-action="Edit" method="post">
+            <input type="hidden" asp-for="Police.PoliceNo" />
+            <input type="hidden" asp-for="Police.MusteriId" />
+            <input type="hidden" asp-for="Police.OdemeBilgisi" />
+            <input type="hidden" asp-for="Police.KullaniciId" />
+            <input type="hidden" asp-for="Police.Prim" />
+            <input type="hidden" asp-for="Police.TanzimTarihi" />
+            <input type="hidden" asp-for="Police.BaslangicTarihi" />
+            <input type="hidden" asp-for="Police.BitisTarihi" />
+            <input type="hidden" asp-for="Police.BransKodu" />
+
+            @if (Model.Police?.Status == "P")
+            {
+                <!-- Ensure the current status is posted back -->
+                <input type="hidden" asp-for="Police.Status" />
+            }
+
+            <div class="mb-3">
+                <label class="form-label">Müşteri</label>
+                <input type="text" class="form-control" value="@(Model.Police?.Musteri?.AdSoyad ?? "N/A")" disabled />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Branş Kodu</label>
+                <input type="text" class="form-control" value="@(Model.Police?.BransKodu ?? "N/A")" disabled />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Prim</label>
+                <input type="text" class="form-control" value="@(Model.Police != null ? Model.Police.Prim.ToString("N2") : "0.00")" disabled />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Tanzim Tarihi</label>
+                <input type="text" class="form-control" value="@(Model.Police?.TanzimTarihi.ToShortDateString() ?? "N/A")" disabled />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Başlangıç Tarihi</label>
+                <input type="text" class="form-control" value="@(Model.Police?.BaslangicTarihi.ToShortDateString() ?? "N/A")" disabled />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Bitiş Tarihi</label>
+                <input type="text" class="form-control" value="@(Model.Police?.BitisTarihi.ToShortDateString() ?? "N/A")" disabled />
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Police.Status" class="form-label">Durum</label>
+                @if (Model.Police?.Status == "P")
+                {
+                    <!-- If status is "P", display it as read-only -->
+                    <input type="text" class="form-control" value="Poliçe (P)" readonly />
+                }
+                else
+                {
+                    <!-- If status is "T", allow selection -->
+                    <select asp-for="Police.Status" class="form-select">
+                        <option value="T">Teklif (T)</option>
+                        <option value="P">Poliçe (P)</option>
+                    </select>
+                    <span asp-validation-for="Police.Status" class="text-danger"></span>
+                }
+            </div>
+            <button type="submit" class="btn btn-primary">Kaydet</button>
+        </form>
+    </div>
+    
+    <div class="col-md-6">
+        <h3>Araç Kayıt Bilgileri</h3>
+        <div class="mb-3">
+            <label class="form-label">Plaka İl Kodu</label>
+            <input type="text" class="form-control" value="@(Model.AracKayit?.PlakaIlKodu ?? "N/A")" disabled />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Plaka Kodu</label>
+            <input type="text" class="form-control" value="@(Model.AracKayit?.PlakaKodu ?? "N/A")" disabled />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Araç Marka</label>
+            <input type="text" class="form-control" value="@(Model.AracKayit?.AracMarka ?? "N/A")" disabled />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Araç Model</label>
+            <input type="text" class="form-control" value="@(Model.AracKayit?.AracModel ?? "N/A")" disabled />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Araç Model Yılı</label>
+            <input type="text" class="form-control" value="@(Model.AracKayit != null ? Model.AracKayit.AracModelYili.ToString() : "N/A")" disabled />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Motor No</label>
+            <input type="text" class="form-control" value="@(Model.AracKayit?.MotorNo ?? "N/A")" disabled />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Şasi No</label>
+            <input type="text" class="form-control" value="@(Model.AracKayit?.SasiNo ?? "N/A")" disabled />
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

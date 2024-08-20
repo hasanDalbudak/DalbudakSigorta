@@ -1,0 +1,27 @@
+@model DalbudakSigorta.Data.Police
+
+<h2>Poliçe Ekleme</h2>
+<hr>
+
+<form asp-action="Create" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="mb-3">
+        <label asp-for="MusteriId" class="form-label">Müşteri</label>
+        <select asp-for="MusteriId" asp-items="ViewBag.Musteriler" class="form-select">
+            <option value="">Seçiniz</option>
+        </select>
+        <span asp-validation-for="MusteriId" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="BransKodu" class="form-label">Branş Kodu</label>
+        <select asp-for="BransKodu" asp-items="ViewBag.BransKodlari" class="form-select">
+            <option value="">Seçiniz</option>
+        </select>
+        <span asp-validation-for="BransKodu" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-secondary">Devam</button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

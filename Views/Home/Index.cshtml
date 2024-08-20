@@ -1,0 +1,71 @@
+﻿@model DalbudakSigorta.Models.HomeViewModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="row">
+
+    <div class="col-lg-8">
+        <div class="bg-white p-4">
+            <h1>Son Poliçeler</h1>
+            <hr>
+            <table class="table table-bordered my-3">
+                <thead>
+                    <tr>
+                        <th>Poliçe No</th>
+                        <th>Müşteri Adı</th>
+                        <th>Durum</th>
+                        <th>Tanzim Tarihi</th>
+                        <th>Seçenekler</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var police in Model.LatestPoliceler)
+                    {
+                        <tr>
+                            <td>@police.PoliceNo</td>
+                            <td>@(police.Musteri != null ? police.Musteri.MusteriAd : "N/A")</td>
+                            <td>@police.Status</td>
+                            <td>@police.TanzimTarihi.ToShortDateString()</td>
+                            <td>
+                                <a asp-action="Edit" asp-controller="Police" asp-route-id="@police.PoliceNo" class="btn btn-sm btn-primary">Edit</a>
+                                <a asp-action="Delete" asp-controller="Police" asp-route-id="@police.PoliceNo" class="btn btn-sm btn-danger">Delete</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="col-lg-4">
+        <div class="bg-white p-4">
+            <h1>Son Müşteriler</h1>
+            <hr>
+            <table class="table table-bordered my-3">
+                <thead>
+                    <tr>
+                        <th>Müşteri Adı</th>
+                        <th>Eposta</th>
+                        <th>Seçenekler</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var musteri in Model.LatestMusteriler)
+                    {
+                        <tr>
+                            <td>@musteri.MusteriAd</td>
+                            <td>@musteri.Eposta</td>
+                            <td>
+                                <a asp-action="Edit" asp-controller="Musteri" asp-route-id="@musteri.MusteriId" class="btn btn-sm btn-primary">Edit</a>
+                                <a asp-action="Delete" asp-controller="Musteri" asp-route-id="@musteri.MusteriId" class="btn btn-sm btn-danger">Delete</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>

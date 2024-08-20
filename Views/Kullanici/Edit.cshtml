@@ -1,0 +1,72 @@
+@model Kullanici
+
+<h2>Kullanıcı Güncelleme</h2>
+<hr>
+
+<div class="row">
+    <div class="col-8">
+        <form asp-controller="Kullanici" asp-action="Edit" method="post">
+            <input type="hidden" asp-for="KullaniciId">
+            <input type="hidden" asp-for="UserName">
+            <input type="hidden" asp-for="Password">
+            <div class="mb-3">
+                <label asp-for="KullaniciAd" class="form-label"> Kullanıcı Ad</label>
+                <input asp-for="KullaniciAd" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label asp-for="KullaniciSoyad" class="form-label"> Kullanıcı Soyad</label>
+                <input asp-for="KullaniciSoyad" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label asp-for="Eposta" class="form-label"> Eposta</label>
+                <input asp-for="Eposta" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label asp-for="Telefon" class="form-label"> Telefon</label>
+                <input asp-for="Telefon" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label asp-for="BaslamaTarihi" class="form-label">Baslama Tarihi</label>
+                <input asp-for="BaslamaTarihi" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-secondary">Kaydet</button>
+        </form>
+    </div>
+    <div class="col-4">
+        <h4>Kayıt Ettiği Araçlar/Yaptığı Poliçeler</h4>
+        <hr>
+        @if (Model.Policeler != null && Model.Policeler.Any())
+        {
+            <table class="table table-bordered my-3">
+                <thead>
+                    <tr>
+                        <th>Poliçe No</th>
+                        <th>Durum</th>
+                        <th>Tanzim Tarihi</th>
+                        <th>Seçenekler</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var police in Model.Policeler)
+                    {
+                        <tr>
+                            <td>@police.PoliceNo</td>
+                            <td>@police.Status</td>
+                            <td>@police.TanzimTarihi.ToShortDateString()</td>
+                            <td>
+                                <a asp-action="Edit" asp-controller="Police" asp-route-id="@police.PoliceNo" class="btn btn-sm btn-primary">Edit</a>
+                                <a asp-action="Delete" asp-controller="Police" asp-route-id="@police.PoliceNo" class="btn btn-sm btn-danger">Delete</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <p>Bu kullanıcı tarafından kaydedilen poliçe yok.</p>
+        }
+    </div>
+    
+</div>
+</div>

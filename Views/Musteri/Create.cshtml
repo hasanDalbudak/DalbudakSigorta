@@ -1,0 +1,49 @@
+@model Musteri
+
+<h2>Musteri Ekle</h2>
+<hr>
+
+<form asp-controller="Musteri" asp-action="Create" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="mb-3">
+        <label asp-for="MusteriAd" class="form-label"> Müşteri Adı</label>
+        <input asp-for="MusteriAd" class="form-control">
+        <span asp-validation-for="MusteriAd" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="MusteriSoyad" class="form-label"> Müşteri Soyadı</label>
+        <input asp-for="MusteriSoyad" class="form-control">
+        <span asp-validation-for="MusteriSoyad" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Eposta" class="form-label"> Eposta</label>
+        <input asp-for="Eposta" class="form-control">
+        <span asp-validation-for="Eposta" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="TCKimlik" class="form-label"> TC Kimlik</label>
+        <input asp-for="TCKimlik" class="form-control">
+        <span asp-validation-for="TCKimlik" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Il" class="form-label"> İl</label>
+        <input asp-for="Il" class="form-control">
+        <span asp-validation-for="Il" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Ilce" class="form-label"> İlçe</label>
+        <input asp-for="Ilce" class="form-control">
+        <span asp-validation-for="Ilce" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Telefon" class="form-label"> Telefon</label>
+        <input asp-for="Telefon" class="form-control">
+        <span asp-validation-for="Telefon" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="DogumTarihi" class="form-label"> Doğum Tarihi</label>
+        <input asp-for="DogumTarihi" class="form-control">
+        <span asp-validation-for="DogumTarihi" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-secondary">Kaydet</button>
+</form>

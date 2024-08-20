@@ -1,0 +1,111 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = DalbudakSigorta
+build_property.RootNamespace = DalbudakSigorta
+build_property.ProjectDir = C:\Users\hasan\OneDrive\Masaüstü\Ada_Yazilim_Staj\DalbudakSigorta_Draft_4\DalbudakSigorta\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\hasan\OneDrive\Masaüstü\Ada_Yazilim_Staj\DalbudakSigorta_Draft_4\DalbudakSigorta
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/hasan/OneDrive/Masaüstü/Ada_Yazilim_Staj/DalbudakSigorta_Draft_4/DalbudakSigorta/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hasan/OneDrive/Masaüstü/Ada_Yazilim_Staj/DalbudakSigorta_Draft_4/DalbudakSigorta/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hasan/OneDrive/Masaüstü/Ada_Yazilim_Staj/DalbudakSigorta_Draft_4/DalbudakSigorta/Views/Kullanici/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS3VsbGFuaWNpXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hasan/OneDrive/Masaüstü/Ada_Yazilim_Staj/DalbudakSigorta_Draft_4/DalbudakSigorta/Views/Kullanici/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS3VsbGFuaWNpXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hasan/OneDrive/Masaüstü/Ada_Yazilim_Staj/DalbudakSigorta_Draft_4/DalbudakSigorta/Views/Kullanici/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS3VsbGFuaWNpXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hasan/OneDrive/Masaüstü/Ada_Yazilim_Staj/DalbudakSigorta_Draft_4/DalbudakSigorta/Views/Kullanici/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS3VsbGFuaWNpXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hasan/OneDrive/Masaüstü/Ada_Yazilim_Staj/DalbudakSigorta_Draft_4/DalbudakSigorta/Views/Kullanici/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS3VsbGFuaWNpXExvZ2luLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hasan/OneDrive/Masaüstü/Ada_Yazilim_Staj/DalbudakSigorta_Draft_4/DalbudakSigorta/Views/Kullanici/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS3VsbGFuaWNpXFJlZ2lzdGVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hasan/OneDrive/Masaüstü/Ada_Yazilim_Staj/DalbudakSigorta_Draft_4/DalbudakSigorta/Views/Musteri/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXVzdGVyaVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hasan/OneDrive/Masaüstü/Ada_Yazilim_Staj/DalbudakSigorta_Draft_4/DalbudakSigorta/Views/Musteri/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXVzdGVyaVxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hasan/OneDrive/Masaüstü/Ada_Yazilim_Staj/DalbudakSigorta_Draft_4/DalbudakSigorta/Views/Musteri/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXVzdGVyaVxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hasan/OneDrive/Masaüstü/Ada_Yazilim_Staj/DalbudakSigorta_Draft_4/DalbudakSigorta/Views/Musteri/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTXVzdGVyaVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hasan/OneDrive/Masaüstü/Ada_Yazilim_Staj/DalbudakSigorta_Draft_4/DalbudakSigorta/Views/Police/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9saWNlXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hasan/OneDrive/Masaüstü/Ada_Yazilim_Staj/DalbudakSigorta_Draft_4/DalbudakSigorta/Views/Police/CreateOffer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9saWNlXENyZWF0ZU9mZmVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hasan/OneDrive/Masaüstü/Ada_Yazilim_Staj/DalbudakSigorta_Draft_4/DalbudakSigorta/Views/Police/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9saWNlXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hasan/OneDrive/Masaüstü/Ada_Yazilim_Staj/DalbudakSigorta_Draft_4/DalbudakSigorta/Views/Police/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9saWNlXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hasan/OneDrive/Masaüstü/Ada_Yazilim_Staj/DalbudakSigorta_Draft_4/DalbudakSigorta/Views/Police/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9saWNlXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hasan/OneDrive/Masaüstü/Ada_Yazilim_Staj/DalbudakSigorta_Draft_4/DalbudakSigorta/Views/Police/Payment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9saWNlXFBheW1lbnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hasan/OneDrive/Masaüstü/Ada_Yazilim_Staj/DalbudakSigorta_Draft_4/DalbudakSigorta/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hasan/OneDrive/Masaüstü/Ada_Yazilim_Staj/DalbudakSigorta_Draft_4/DalbudakSigorta/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hasan/OneDrive/Masaüstü/Ada_Yazilim_Staj/DalbudakSigorta_Draft_4/DalbudakSigorta/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hasan/OneDrive/Masaüstü/Ada_Yazilim_Staj/DalbudakSigorta_Draft_4/DalbudakSigorta/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/hasan/OneDrive/Masaüstü/Ada_Yazilim_Staj/DalbudakSigorta_Draft_4/DalbudakSigorta/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-avwblmqdv2

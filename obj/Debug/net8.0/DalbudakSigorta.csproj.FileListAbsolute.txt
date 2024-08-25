@@ -506,3 +506,4 @@ C:\Users\hasan\OneDrive\Masaüstü\Ada_Yazilim_Staj\DalbudakSigorta_Draft_4\Dalb
 C:\Users\hasan\OneDrive\Masaüstü\Ada_Yazilim_Staj\DalbudakSigorta_Draft_4\DalbudakSigorta\obj\Debug\net8.0\DalbudakSigorta.pdb
 C:\Users\hasan\OneDrive\Masaüstü\Ada_Yazilim_Staj\DalbudakSigorta_Draft_4\DalbudakSigorta\obj\Debug\net8.0\DalbudakSigorta.genruntimeconfig.cache
 C:\Users\hasan\OneDrive\Masaüstü\Ada_Yazilim_Staj\DalbudakSigorta_Draft_4\DalbudakSigorta\obj\Debug\net8.0\ref\DalbudakSigorta.dll
+C:\Users\hasan\OneDrive\Masaüstü\Ada_Yazilim_Staj\DalbudakSigorta_Draft_4\DalbudakSigorta\obj\Debug\net8.0\DalbudakSigorta.sourcelink.json
